@@ -1,4 +1,4 @@
-import { addDoc, collection, query, where, getDoc, getDocs, doc, deleteDoc } from 'firebase/firestore'
+import { addDoc, collection, query, where, getDocs, doc, deleteDoc} from 'firebase/firestore'
 import { useEffect, useState } from 'react'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { auth, db } from '../../config/firebase'
@@ -55,17 +55,15 @@ export const Post = (props: Props) => {
         getLikes()
     }, [])
     return (
-        <div>
-            <div className='title'>
-                <h1> {post.title} </h1>
-            </div>
-            <div className='description'>
-                <p> {post.description} </p>
-            </div>
-            <div>
-                <p> {post.username} </p>
-                <button style={{backgroundColor: likeToggle ? 'greenyellow' : 'grey'}} onClick={likeToggle ? unlikePost : likePost}> &#128077; </button>
-                {likeCount && <p> Likes: {likeCount.length} </p>}
+        <div className='display-post'>
+            <div className='display-form'>
+                <div className='title'> <h1> {post.title} </h1> </div>
+                <div className='description'> <p> {post.description} </p> </div>
+                <div className='post-user'> <p> {post.username} </p> </div>
+                <div>
+                    <button style={{backgroundColor: likeToggle ? 'greenyellow' : 'grey'}} onClick={likeToggle ? unlikePost : likePost}> &#128077; </button>
+                    <div className='like-count'> {likeCount && <p> {likeCount.length} </p>} </div>
+                </div>
             </div>
         </div>
     )

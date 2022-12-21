@@ -11,6 +11,9 @@ export const Nav = () => {
     }
     return (
         <div className='nav'>
+            <div className='nav-title'>
+                Meet Otter
+            </div>
             <div className='link'>
                 <Link to='/'>HOME</Link>
                 {user ? (<Link to='/createpost'>CREATE POST</Link>) : (<Link to='/login'>LOGIN</Link>)}

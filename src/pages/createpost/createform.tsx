@@ -2,7 +2,7 @@ import { useForm } from 'react-hook-form'
 import * as yup from 'yup'
 import {yupResolver} from '@hookform/resolvers/yup'
 import { registerVersion } from 'firebase/app'
-import { addDoc, collection} from 'firebase/firestore'
+import { addDoc, collection, serverTimestamp} from 'firebase/firestore'
 import { auth, db } from '../../config/firebase'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import {useNavigate} from 'react-router-dom'
@@ -34,18 +34,22 @@ export const CreateForm = () => {
             description: data.description,
             userID: user?.uid,
             username: user?.displayName,
+            timePosted: serverTimestamp()
         })
 
         navigate('/')
     }
 
     return (
-        <form onSubmit={handleSubmit(onPost)}>
-            <input placeholder='Title' {...register('title')} />
-            <p style={{color: 'red'}}>{errors.title?.message}</p>
-            <textarea placeholder='Description' {...register('description')}/>
-            <p style={{color: 'red'}}>{errors.description?.message}</p>
-            <input type='submit'/>
-        </form>
+        <div className='create-post'>
+            <form className='create-form' onSubmit={handleSubmit(onPost)}>
+                <h1>Create New Post</h1>
+                <input placeholder='Title' {...register('title')} />
+                <p style={{color: 'red'}}>{errors.title?.message}</p>
+                <textarea placeholder='Description' {...register('description')}/>
+                <p style={{color: 'red'}}>{errors.description?.message}</p>
+                <input className='submitForm' type='submit'/>
+            </form>
+        </div>
     )
 }

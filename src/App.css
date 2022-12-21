@@ -5,16 +5,19 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background-color: rgb(208, 232, 254);
 }
 
 .nav {
-  width: 100%;
+  width: auto;
   height: 80px;
   background-color: rgb(136, 238, 225);
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  border-bottom: 5px solid green;
+  border-left: 250px solid rgb(27, 91, 133);
 }
 
 .nav .link {
@@ -23,9 +26,9 @@ body {
 }
 
 .link a {
-  color: grey;
+  color: rgb(0, 0, 0);
   text-decoration: none;
-  border-bottom: 3px solid grey;
+  border-bottom: 3px solid rgb(0, 0, 0);
   padding-bottom: 2px;
   margin: 10px;
 }
@@ -40,9 +43,123 @@ body {
 .user p {
   font-size: 15px;
   margin-right: 10px;
-  color: grey;
 }
+
 .user img {
   font-size: 15px;
   border-radius: 50%;
+}
+
+.user button {
+  margin-left:20px;
+}
+
+.nav-title {
+  left:10px;
+  top:10px;
+  position:absolute;
+  color: rgb(185, 241, 241);
+  font-size:50px;
+  font-family:fantasy;
+}
+
+input, textarea {
+  font-family: "Nunito", sans-serif;
+}
+
+.create-post {
+  width: 95%;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5px
+}
+
+.create-form {
+  margin-top: 50px;
+  padding: 30px 20px;
+  width: 320px;
+  border-radius: 7px;
+  backdrop-filter: blur(5px);
+  background-color: rgb(136, 238, 225);
+  border: 7px solid rgb(40, 181, 167);
+  border-radius: 5px;
+  border-style: double;
+  overflow: hidden;
+}
+
+input {
+  padding: 8px 10px;
+  margin: 3px 8px 16px 8px;
+  width:280px;
+  background-color: rgba(222, 239, 248, 0.877);
+  border: 0px transparent;
+  border-radius: 5px;
+  font-size: 16px;
+  z-index: 1;
+}
+
+textarea {
+  width:280px;
+  height:200px;
+  resize: none;
+  padding: 8px 10px;
+  margin: 3px 8px 16px 8px;
+  background-color: rgba(222, 239, 248, 0.877);
+  border: 0px transparent;
+  border-radius: 5px;
+  font-size: 16px;
+  z-index: 1;
+}
+
+.submitForm:hover {
+  cursor: pointer;
+  background-color: rgb(117, 202, 190);
+}
+
+.display-post {
+  width:100%;
+  height:auto;
+  display: flex;
+  justify-content: center;
+}
+
+.display-form {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  padding: 10px 10px;
+  width: 620px;
+  border: 2px solid rgb(40, 181, 167);
+  border-radius: 3px;
+  overflow: hidden;
+  word-wrap: break-word;
+  text-align: left;
+  vertical-align: top;
+  background-color: aliceblue;
+}
+
+.title {
+  color:rgb(34, 157, 136);
+  border-bottom: 1px solid black;
+}
+
+.description {
+  border-bottom: 1px solid rgb(184, 184, 184);
+} 
+
+.post-user {
+  font-size:10px;
+  color:rgb(141, 141, 141);
+}
+
+.like-count {
+  font-size:12px;
+  display: inline-block;
+  margin-left: 4px;
+}
+
+.display-post button {
+  font-size:10px
 }

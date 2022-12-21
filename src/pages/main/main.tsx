@@ -1,4 +1,4 @@
-import { getDocs, collection } from 'firebase/firestore'
+import { getDocs, collection, Timestamp, } from 'firebase/firestore'
 import { useEffect, useState } from 'react'
 import { db } from '../../config/firebase'
 import { Post } from './post'
@@ -9,8 +9,7 @@ export interface Post {
     description: string
     userid: string
     username: string
-    
-
+    timePosted: Timestamp
 }
 
 export const Main = () => {
@@ -28,6 +27,10 @@ export const Main = () => {
         getPosts()
     }, [])
 
-    return <div>{postPage?.map((post) => <Post post={post}/>)}</div>
+    
+
+    return (
+        <div>{postPage?.slice(0).reverse().map((post) => <Post post={post}/>)}</div>
+    ) 
 
 }
