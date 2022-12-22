@@ -59,7 +59,7 @@ export const Post = (props: Props) => {
             <div className='display-form'>
                 <div className='title'> <h1> {post.title} </h1> </div>
                 <div className='description'> <p> {post.description} </p> </div>
-                <div className='post-user'> <p> {post.username} </p> </div>
+                <div className='post-user'> <p>{post.username}  || &nbsp; Posted at {post.timePosted}</p> </div>
                 <div>
                     <button style={{backgroundColor: likeToggle ? 'greenyellow' : 'grey'}} onClick={likeToggle ? unlikePost : likePost}> &#128077; </button>
                     <div className='like-count'> {likeCount && <p> {likeCount.length} </p>} </div>

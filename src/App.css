@@ -17,7 +17,7 @@ body {
   align-items: center;
   justify-content: flex-end;
   border-bottom: 5px solid green;
-  border-left: 250px solid rgb(27, 91, 133);
+  border-left: 15em solid rgb(27, 91, 133);
 }
 
 .nav .link {
