@@ -7,9 +7,10 @@ export interface Post {
     id: string
     title: string
     description: string
-    userid: string
+    userID: string
     username: string
     timePosted: string
+    editTime: string
 }
 
 export const Main = () => {

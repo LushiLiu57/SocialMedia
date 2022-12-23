@@ -145,13 +145,17 @@ textarea {
   border-bottom: 1px solid black;
 }
 
-.description {
-  border-bottom: 1px solid rgb(184, 184, 184);
+.edit-time {
+  font-size:10px;
+  display: inline-block;
+  color:rgb(141, 141, 141);
+  margin-left: 4px;
 } 
 
 .post-user {
   font-size:10px;
   color:rgb(141, 141, 141);
+  border-top: 1px solid rgb(184, 184, 184);
 }
 
 .like-count {

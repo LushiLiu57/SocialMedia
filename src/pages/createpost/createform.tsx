@@ -34,7 +34,8 @@ export const CreateForm = () => {
             description: data.description,
             userID: user?.uid,
             username: user?.displayName,
-            timePosted: new Date(new Date().getTime()).toLocaleString()
+            timePosted: new Date(new Date().getTime()).toLocaleString(),
+            editTime: ''
         })
 
         navigate('/')
