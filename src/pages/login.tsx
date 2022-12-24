@@ -8,7 +8,6 @@ export const Login = () => {
 
     const googleSignIn = async () => {
         const result = await signInWithPopup(auth, provider);
-        console.log(result)
         navigate('/')
     }
     return <div>

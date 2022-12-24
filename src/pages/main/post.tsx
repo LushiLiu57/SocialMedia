@@ -47,8 +47,6 @@ export const Post = (props: Props) => {
             const unlikeQuery = query(likesRef, where("postID", "==", post.id), where("userID", "==", user?.uid))
             const unlikeData = await getDocs(unlikeQuery)
             const unlike = doc(db, 'likes', unlikeData.docs[0].id)
-            console.log(unlike)
-            console.log(unlikeQuery)
             await deleteDoc(unlike)
             setLikeCount((p) => p && p.filter((like) => like.likeID !== unlikeData.docs[0].id))
         }
